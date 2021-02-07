@@ -1,6 +1,6 @@
 <footer class="footer">
+	<h3>À propos : <br></h3>
 	<p>
-		À propos : <br><br>
 		<a href="mentionLegales.php">Mention légales</a> |
 		<a href="contact">Contact</a>
 	</p>

@@ -42,9 +42,11 @@
 					<?= $acteur["description"] ?>
 				</p>
 				<p>
-					aimez vous cet acteur ? <a class="specA" href="oui.php?&id=<?= $id ?>">oui (<? echo $likes ?>)</a> <a class="specA" href="non.php?&id=<?= $id ?>">non(<? echo $dislikes ?>)</a>
+					Aimez vous cet acteur ? <a class="specA" href="oui.php?&id=<?= $id ?>">oui (<? echo $likes ?>)</a> <a class="specA" href="non.php?&id=<?= $id ?>">non(<? echo $dislikes ?>)</a>
 				</p>
 				</DIV>
+				<DIV class="body">
+					<h3>Laissez un commentaires</h3>
 				<form action="commentaires_post.php" method="post">
 			        <p>
 				        <label for="message">Message de <?php echo $session ?></label> :  <input type="text" name="message" id="message" size="100" /><input type="hidden" name="id_acteur" value="<?php echo $id ?>"><br />
@@ -63,11 +65,13 @@
 
     while($donnees = $com_query-> fetch()) 
     {
-    	echo '<p><strong>' . $donnees['nom'] .' '.  $donnees['prenom'].' '. '</strong> : ' . $donnees['message'].' '.$donnees['datetime'] . '</p>';
+    	echo '<p><strong>' . $donnees['nom'] .' '.  $donnees['prenom'].' '. '</strong> : ' . $donnees['message'].' | '.$donnees['datetime'] . '</p>';
     } 
        
     $com_query->closeCursor();
 ?>
+                </DIV>
+<? include_once("footer.php"); ?>
 			</body>
 			</html>
 		<?php
